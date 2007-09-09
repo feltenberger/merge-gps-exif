@@ -12,8 +12,8 @@ Extract the binary file (this assumes Windows at the moment).
 
 Type this command:
 
-<code>
+<pre>
 mvn install:install-file -Dfile=[location-of-exiftool.exe] -DgroupId=exif-tool -DartifactId=exif-tool -Dversion=6.96 -Dpackaging=exe -DgeneratePom=true
-</code>
+</pre>
 
 That should be good.
