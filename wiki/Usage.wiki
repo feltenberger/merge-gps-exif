@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Please install ExifTool before running this, or your build will fail.
+Please install ExifTool before running this, or your build will fail.  That's really what does most of the work.
 
 First, run a build:
 mvn clean install
@@ -19,6 +19,6 @@ Here is an example:
 
 java -jar merge-gps-exif-1.0-SNAPSHOT.jar "C:\Documents and Settings\Dave\Desktop\Chicago Pictures" true "C:\data\gps\Chicago GPS Points.csv" 35
 
-The program will loop through all your images and merge the closest GPS fix with the date of image capture (as long as it's below the max you specify in the arguments list).
+The program will loop through all your images and merge the closest GPS fix with the date of image capture (as long as it's less than or equal to the max seconds you specify in the arguments list).
 
-This is incredibly inefficient at the moment - it's an n^2 worst case, which it will often hit.  I plan to make this way, way more efficient by using nested hash tables on the dates/times, so instead of looping, you can hash a couple times to find data closer to yours.  In the meantime, with small directory sizes, it should be okay.
+*Note* This is incredibly inefficient at the moment - it's an n^2 worst case, which it will often hit.  I plan to make this way, way more efficient by using nested hash tables on the dates/times, so instead of looping, you can hash a couple times to find data closer to yours.  In the meantime, with small directory sizes, it should be okay.
