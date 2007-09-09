@@ -19,6 +19,12 @@ Here is an example:
 
 java -jar merge-gps-exif-1.0-SNAPSHOT.jar "C:\Documents and Settings\Dave\Desktop\Chicago Pictures" true "C:\data\gps\Chicago GPS Points.csv" 35
 
+merge.log has a list of what was merged, what wasn't able to be merged, and what failed.
+
+= What it does =
+
 The program will loop through all your images and merge the closest GPS fix with the date of image capture (as long as it's less than or equal to the max seconds you specify in the arguments list).  Your original -- untouched -- image file will be copied, just in case something goes wrong. If your image is named myImage.CR2, it will be renamed myImage.CR2_original.  Which brings up a good point: I've only tested this on Canon's CR2 format and TIFFs, but since the manipulation of the EXIF data is done by Phil Harvey's ExifTool, I'm reasonably certain all the formats he says he supports actually are supported (and there are many!).
+
+= Excuses =
 
 *Note:* This is incredibly inefficient at the moment - it's an n^2 worst case, which it will often hit.  I plan to make this way, way more efficient by using nested hash tables on the dates/times, so instead of looping, you can hash a couple times to find data closer to yours.  In the meantime, with small directory sizes, it should be okay.
