@@ -9,6 +9,10 @@ mvn clean install
 
 This will place all the necessary files in the target directory.
 
+= CSV Format =
+
+I wrote the import to be somewhat flexible in the column order and naming.  Currently you need a header field with latitude, longitude, date, time, and altitude at a minimum.  See the downloads section for a sample.  Your column headings need to have the following in them, respectively: "lat", "lon", "date", "time", and "alt".  Any variation on that is fine -- e.g. Latitude Degrees -- so long as one column doesn't have both terms.  The lat/lon values are currently calculated from a weird format that my GlobalSat Data Logger DG-100 exports to, but it should accept standard decimal, i.e. non-degree/hour/minute, format as well.  Eventually I'll add GPX support as well, as that's the standard.
+
 = Usage =
 
 From the target directory, type
