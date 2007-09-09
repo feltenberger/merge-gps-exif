@@ -1,0 +1,22 @@
+#summary This describes the usage of merge-gps-exif
+
+= Introduction =
+
+Please install ExifTool before running this, or your build will fail.
+
+First, run a build:
+<code>mvn clean install</code>
+
+This will place all the necessary files in the target directory.
+
+= Usage =
+
+From the target directory, type
+<code>java -jar merge-gps-exif-1.0-SNAPSHOT.jar imagesDirectory recursiveFetch[true or false] csvGpsFile maxTimeDiffInSeconds</code>
+
+Here is an example:
+<code>java -jar merge-gps-exif-1.0-SNAPSHOT.jar "C:\Documents and Settings\Dave\Desktop\Chicago Pictures" true "C:\data\gps\Chicago GPS Points.csv" 35</code>
+
+The program will loop through all your images and merge the closest GPS fix with the date of image capture (as long as it's below the max you specify in the arguments list).
+
+This is incredibly inefficient at the moment - it's an n^2 worst case, which it will often hit.  I plan to make this way, way more efficient by using nested hash tables on the dates/times, so instead of looping, you can hash a couple times to find data closer to yours.  In the meantime, with small directory sizes, it should be okay.
