@@ -1,0 +1,9 @@
+#summary Things I'd like to do in the future
+
+= Functionality =
+
+* Accept GPX format as well as CSV
+
+* Make a GUI
+
+* Speed up performance
