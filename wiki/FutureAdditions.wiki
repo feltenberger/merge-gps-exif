@@ -2,8 +2,8 @@
 
 = Functionality =
 
-* Accept GPX format as well as CSV
+- Accept GPX format as well as CSV
 
-* Make a GUI
+- Make a GUI
 
-* Speed up performance
+- Speed up performance
