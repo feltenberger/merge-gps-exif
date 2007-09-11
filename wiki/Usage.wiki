@@ -1,8 +1,19 @@
 #summary This describes the usage of merge-gps-exif
 
-= Introduction =
+= Requirements =
 
-First, grab a copy of the source code from the SVN repository.
+  * Windows.  But only temporarily. _I promise_.
+  * [http://java.sun.com/j2se/1.5.0/ Java 1.5 or later] with `JAVA_HOME` set
+  * [http://maven.apache.org Maven2] with `mvn.bat` or `mvn.sh` in your path
+  * [http://subversion.tigris.org/ A Subversion Client]
+
+= Installation =
+
+Grab a copy of the source code from the SVN repository using TortoiseSVN or svn from the command line in Windows.
+e.g.
+{{{
+svn checkout http://merge-gps-exif.googlecode.com/svn/trunk/ merge-gps-exif
+}}}
 
 Then, run a build:
 {{{
