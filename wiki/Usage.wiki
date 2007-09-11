@@ -14,7 +14,7 @@ Grab a copy of the source code from the SVN repository using TortoiseSVN or `svn
 svn checkout http://merge-gps-exif.googlecode.com/svn/trunk/ merge-gps-exif
 }}}
 
-Then, run a build:
+Then, from the `merge-gps-exif` directory, run a build:
 {{{
 mvn clean install
 }}}
