@@ -2,9 +2,9 @@
 
 = Introduction =
 
-Please install ExifTool before running this, or your build will fail.  That's really what does most of the work.
+First, grab a copy of the source code from the SVN repository.
 
-First, run a build:
+Then, run a build:
 mvn clean install
 
 This will place all the necessary files in the target directory.
