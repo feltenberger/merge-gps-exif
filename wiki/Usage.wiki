@@ -9,8 +9,7 @@
 
 = Installation =
 
-Grab a copy of the source code from the SVN repository using TortoiseSVN or svn from the command line in Windows.
-e.g.
+Grab a copy of the source code from the SVN repository using TortoiseSVN or `svn` from the command line, e.g.
 {{{
 svn checkout http://merge-gps-exif.googlecode.com/svn/trunk/ merge-gps-exif
 }}}
@@ -25,6 +24,30 @@ This will place all the necessary files in the target directory.
 = CSV Format =
 
 I wrote the import to be somewhat flexible in the column order and naming.  Currently you need a header field with latitude, longitude, date, time, and altitude at a minimum.  See the downloads section for a sample.  Your column headings need to have the following in them, respectively: "lat", "lon", "date", "time", and "alt".  Any variation on that is fine -- e.g. Latitude Degrees -- so long as one column doesn't have both terms.  The lat/lon values are currently calculated from a weird format that my GlobalSat Data Logger DG-100 exports to, but it should accept standard decimal, i.e. non-degree/hour/minute, format as well.  Eventually I'll add GPX support as well, as that's the standard.
+
+|| Record Number ||Date || Time || Latitude || Longitude || Speed(mile/hour) || Altitude(feet) ||
+||1||2007-08-09||06:42:34||3918.5949||-7637.3061||58.69||23.0||
+||2||2007-08-09||06:43:05||3918.3556||-7636.8363||50.86||78.7||
+||3||2007-08-09||06:43:35||3918.0310||-7636.6964||48.70||120596.9||
+||4||2007-08-09||06:44:05||3917.6153||-7636.6420||45.68||120583.8||
+||5||2007-08-09||06:44:37||3917.4347||-7636.4908||23.70||6.6||
+||6||2007-08-09||06:45:08||3917.4252||-7636.7231||9.34||13.1||
+||7||2007-08-09||06:46:02||3917.3950||-7636.7889||8.80||9.8||
+||8||2007-08-09||06:46:32||3917.2135||-7636.8019||12.04||137.8||
+
+is the equivalent of:
+
+{{{
+Record Number,Date         ,Time     ,Latitude,Longitude,Speed(mile/hour),Altitude(feet),
+1,2007-08-09,06:42:34,3918.5949,-7637.3061,58.69,23.0
+2,2007-08-09,06:43:05,3918.3556,-7636.8363,50.86,78.7
+3,2007-08-09,06:43:35,3918.0310,-7636.6964,48.70,120596.9
+4,2007-08-09,06:44:05,3917.6153,-7636.6420,45.68,120583.8
+5,2007-08-09,06:44:37,3917.4347,-7636.4908,23.70,6.6
+6,2007-08-09,06:45:08,3917.4252,-7636.7231,9.34,13.1
+7,2007-08-09,06:46:02,3917.3950,-7636.7889,8.80,9.8
+8,2007-08-09,06:46:32,3917.2135,-7636.8019,12.04,137.8
+}}}
 
 = Usage =
 
