@@ -23,7 +23,9 @@ This will place all the necessary files in the target directory.
 
 = CSV Format =
 
-I wrote the import to be somewhat flexible in the column order and naming.  Currently you need a header field with latitude, longitude, date, time, and altitude at a minimum.  See the downloads section for a sample.  Your column headings need to have the following in them, respectively: "lat", "lon", "date", "time", and "alt".  Any variation on that is fine -- e.g. Latitude Degrees -- so long as one column doesn't have both terms.  The lat/lon values are currently calculated from a weird format that my GlobalSat Data Logger DG-100 exports to, but it should accept standard decimal, i.e. non-degree/hour/minute, format as well.  Eventually I'll add GPX support as well, as that's the standard.
+The lat/lon values are currently calculated from a weird format that my GlobalSat Data Logger DG-100 exports to, but it should accept standard decimal, i.e. non-degree/hour/minute, format as well.  Eventually I'll add GPX support, as that's the standard and probably more useful.
+
+The following is an example.  The data in this table:
 
 || Record Number ||Date || Time || Latitude || Longitude || Speed(mile/hour) || Altitude(feet) ||
 ||1||2007-08-09||06:42:34||3918.5949||-7637.3061||58.69||23.0||
@@ -38,7 +40,7 @@ I wrote the import to be somewhat flexible in the column order and naming.  Curr
 is the equivalent of:
 
 {{{
-Record Number,Date         ,Time     ,Latitude,Longitude,Speed(mile/hour),Altitude(feet),
+Record Number,Date,Time,Latitude,Longitude,Speed(mile/hour),Altitude(feet)
 1,2007-08-09,06:42:34,3918.5949,-7637.3061,58.69,23.0
 2,2007-08-09,06:43:05,3918.3556,-7636.8363,50.86,78.7
 3,2007-08-09,06:43:35,3918.0310,-7636.6964,48.70,120596.9
@@ -48,6 +50,16 @@ Record Number,Date         ,Time     ,Latitude,Longitude,Speed(mile/hour),Altitu
 7,2007-08-09,06:46:02,3917.3950,-7636.7889,8.80,9.8
 8,2007-08-09,06:46:32,3917.2135,-7636.8019,12.04,137.8
 }}}
+
+Any variation on the "Necessary text" column -- e.g. "Latitude Degrees" for "lat" -- will be recognized.  It's case-insensitive.  Be sure that you don't have more than one term in a single column, however.
+
+|| Column data || Necessary text ||
+|| Latitude || lat ||
+|| Longitude || lon ||
+|| Date of fix || date ||
+|| Time of fix || time ||
+|| Speed at reading time || speed ||
+
 
 = Usage =
 
