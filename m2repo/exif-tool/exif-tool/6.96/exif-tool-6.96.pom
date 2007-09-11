@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>exif-tool</groupId>
-  <artifactId>exif-tool</artifactId>
-  <packaging>exe</packaging>
-  <version>6.96</version>
-  <description>POM was created from install:install-file</description>
-</project>
