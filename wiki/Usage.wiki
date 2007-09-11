@@ -5,7 +5,9 @@
 First, grab a copy of the source code from the SVN repository.
 
 Then, run a build:
+{{{
 mvn clean install
+}}}
 
 This will place all the necessary files in the target directory.
 
@@ -17,11 +19,15 @@ I wrote the import to be somewhat flexible in the column order and naming.  Curr
 
 From the target directory, type
 
+{{{
 java -jar merge-gps-exif-1.0-SNAPSHOT.jar imagesDirectory recursiveFetch[true or false] csvGpsFile maxTimeDiffInSeconds
+}}}
 
 Here is an example:
 
+{{{
 java -jar merge-gps-exif-1.0-SNAPSHOT.jar "C:\Documents and Settings\Dave\Desktop\Chicago Pictures" true "C:\data\gps\Chicago GPS Points.csv" 35
+}}}
 
 merge.log has a list of what was merged, what wasn't able to be merged, and what failed.
 
